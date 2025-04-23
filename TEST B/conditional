@@ -1,0 +1,9 @@
+int conditional(int x, int y, int z)
+{
+//对三目运算符 进行实现，首先实现if（x）{a;}
+//~(!x)+1   如果x为0，则该式为0xffffffff，否则为0x00000000
+//xx = ~(~(!x)+1)
+// 所以，if(x){a;}就是 a&xx
+xx = ~(~(!x)+1);
+return (y&xx)|(z&~xx);
+}

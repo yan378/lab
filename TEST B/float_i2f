@@ -1,0 +1,13 @@
+unsigned float_i2f(int x)
+{
+int sign = x &0x80000000;
+int frac;
+int exp;
+int i = 30;
+if(sign){x = ~x + 1;}
+int i = 30
+while(!(x >> i)){i = i + ~0;}
+exp = i + 127;
+x = (31 - i);
+frac = 
+}

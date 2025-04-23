@@ -1,0 +1,9 @@
+int isAsciiDigit(int x) 
+{
+  //0x30 <=x<=0x39
+  //等价于 x-0x30 >= 0 --> !((x + ~0x30 + 1) >> 31)为 1
+  //x-0x3a < 0 ---> (x + ~0x3a + 1) 为1
+  int aa = !((x + ~0x30 + 1)>>31);
+  int bb = (x + ~0x3a + 1)>>31;
+  return (aa & bb);
+}

@@ -1,0 +1,8 @@
+int isPower2(int x)
+{
+int base = ~(!x) + 1;
+int chek = x&(x + ~0);
+//if (base == 0){return 0;}
+//else{return !chek; }
+return (0&base)|((!chek)&~base);
+}

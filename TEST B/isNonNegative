@@ -1,0 +1,6 @@
+int isNonNegative(int x)
+{
+//x的首位决定了数字的正负号
+x = x>>31;
+return (x+1);
+}

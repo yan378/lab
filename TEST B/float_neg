@@ -1,0 +1,11 @@
+
+unsigned float_neg(unsigned uf)
+{
+    unsigned sign = uf & 0x80000000;
+    unsigned exp = (uf >> 23) & 0xff;
+    unsigned frac = uf & 0x7fffff;
+    if (!(exp^0xff) && (frac^0)) {
+        return uf;
+    }
+    return (~sign >> 31 & 1)<< 31 | exp << 23 | frac;
+}

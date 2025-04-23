@@ -1,0 +1,8 @@
+int anyEvenBit(int x)
+{
+//f = 0x33333333 获得所有偶数位信息的工具
+//如果 x & f 为 0 则偶数位上无1
+int f = 0x33333333;
+x = !(x&f);
+return !x;
+}

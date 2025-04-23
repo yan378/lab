@@ -1,0 +1,5 @@
+int absVal(int x)
+{
+int xx = ~(x>>31);
+result = (x&xx)|((~x + 1)&(~xx));
+}

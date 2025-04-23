@@ -1,13 +1,22 @@
 unsigned float_i2f(int x)
 {
-int sign = x &0x80000000;
+int sign = x &amp;0x80000000;
 int frac;
 int exp;
+int delta;
 int i = 30;
-if(sign){x = ~x + 1;}
+if(sign){x = -x;}
 int i = 30
-while(!(x >> i)){i = i + ~0;}
+while(!(x &gt;&gt; i)){i = i + ~0;}
 exp = i + 127;
 x = (31 - i);
-frac = 
+frac = 0x7fffff &amp; (x &gt;&gt; 8);
+x = x &amp; 0xff;
+delta = x &gt; 128 || ((x == 128) &amp;&amp; (fraction &amp; 1));
+if(frac &gt;&gt; 23)
+{
+frac  = frac &amp; 0x7fffff;
+exp = exp + 1;
+}
+return sign|(exp &lt;&lt; 23)| frac;
 }
